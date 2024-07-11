@@ -24,7 +24,7 @@ export default function Signin() {
 
   useEffect(() => {
     if (session) {
-        navigate("/lists");
+        navigate("/writings");
     }
     }, [session, navigate]);
 

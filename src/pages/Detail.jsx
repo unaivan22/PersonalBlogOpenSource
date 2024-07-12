@@ -70,7 +70,9 @@ const Detail = () => {
     return new Date(createdAt).toLocaleString('en-US', options);
   };
 
-  console.log('detail loaded');
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   if (isLoading) {
     return <div className='grid h-screen place-items-center text-muted-foreground font-light text-sm'>Loading...</div>; // Display a loading indicator while fetching data
@@ -85,7 +87,7 @@ const Detail = () => {
       <Helmet>
         <title>{noteTitle}</title>
       </Helmet>
-      <div className='flex mx-auto max-w-lg items-center justify-between h-[20vh] gap-x-2'>
+      <div className='flex mx-auto max-w-lg items-center justify-between gap-x-2 sticky top-0 my-6 py-6 backdrop-blur-sm bg-stone-100/90'>
         <Link onClick={() => navigate(-1)} className='text-lg font-semibold px-3 py-1 border-[2px] border-black rounded-2xl flex items-center gap-x-2'>
           <ArrowLeft /> Back
         </Link>

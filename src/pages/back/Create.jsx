@@ -199,7 +199,7 @@ export default function Create() {
             <DialogFooter className="sm:justify-start">
               <DialogClose asChild>
                 <div className='w-full flex items-center justify-center'>
-                <Link to='/lists'>
+                <Link to='/writings'>
                   <Button type="button" className='w-full'>
                       Done
                   </Button>

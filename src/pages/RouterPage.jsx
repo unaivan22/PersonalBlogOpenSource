@@ -16,7 +16,7 @@ export default function RouterPage() {
         <Route path='/create' element={<Create />} />
         <Route path='/:noteNoteuuid' element={<Detail />} />
         <Route path='/writings/:noteNoteuuid' element={<Detail />} />
-        <Route path='/4d2f75e8b1a7392f' element={<Signin />} />
+        <Route path='/4d2f75e8b1a7392f' element={<Signin />} /> //  route for signin, you can changes with what you want
         <Route path='/writings/:noteNoteuuid/edit' element={<Edit />} />
         {/* <Route path='*' element={<NotFound/>} /> */}
       </Routes>

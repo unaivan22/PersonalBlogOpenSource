@@ -5,6 +5,7 @@ import Footer from './Footer';
 import supabase from './SupabaseClient';
 import parse from 'html-react-parser';
 import { Link } from 'react-router-dom';
+import Check from './Check';
 
 export default function Home() {
   const [blogs, setBlogs] = useState([]);
@@ -73,7 +74,7 @@ export default function Home() {
     <div className='container mx-auto bg-stone-100 h-max min-h-screen rounded-xl p-4 m-4'>
       <div className='flex items-center justify-center h-[30vh] gap-x-2'>
         <h1 className='text-[2rem] font-semibold px-2 py-0 border-[3px] border-black rounded-2xl inter-typeface'>Ivan's</h1>
-        <h1 className='text-[2rem] font-semibold inter-typeface'>blog</h1>
+        <h1 className='text-[2rem] font-semibold inter-typeface flex items-center gap-x-2'>blog <span><Check /></span> </h1>
       </div>
       <div className='flex items-center justify-center -space-x-[4rem]'>
         <motion.div

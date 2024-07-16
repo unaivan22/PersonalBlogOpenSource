@@ -57,9 +57,9 @@ export default function Check() {
     return (
       <div>
         {user && (
-            <div className='flex gap-x-2 my-1 items-center'>
+            <div className='w-full bg-gradient-to-r from-yellow-200 to-yellow-500 p-2 text-center'>
                 {user && (
-                    <Link to='/writings' className='rounded-full bg-black text-white text-xs flex items-center px-3 py-2 gap-x-2'> <Edit className='w-3 h-3' /> Edit </Link>
+                    <Link to='/writings' className='underline text-center text-sm font-semibold'> Edit Posts </Link>
                     )}
             </div>
         )}

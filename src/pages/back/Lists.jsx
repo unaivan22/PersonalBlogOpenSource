@@ -19,7 +19,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Ban, MoreHorizontal, PlusCircle } from 'lucide-react';
+import { Ban, Dot, MoreHorizontal, PlusCircle } from 'lucide-react';
 import Info from '../Info';
 import supabase from '../SupabaseClient';
 import { Link, useNavigate } from 'react-router-dom';
@@ -116,6 +116,12 @@ export default function Lists() {
     } catch (error) {
       console.error('Error:', error.message);
     }
+  };
+
+  const getReadingTime = (text) => {
+    const wordsPerMinute = 200; // Average reading speed
+    const words = text.split(/\s+/).length; // Split by spaces and count words
+    return Math.ceil(words / wordsPerMinute); // Calculate minutes
   };
 
   const handleEditNote = (noteNoteuuid) => {
@@ -217,7 +223,11 @@ export default function Lists() {
                   </DropdownMenu>
                 </div>
                 <p className='text-sm line-clamp-2'><HtmlRenderer html={blogItem.note_text} /></p>
+                <div className='flex items-center'>
                 <p className='text-xs font-light text-muted-foreground'>{formatCreatedAt(blogItem.created_at)}</p>
+                <Dot className='text-stone-500' />
+                <p className='text-xs font-light text-muted-foreground'>{getReadingTime(blogItem.note_text)} min read</p>
+                </div>
               </div>
             ))
           )}

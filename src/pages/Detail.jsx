@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Dot } from 'lucide-react';
 import supabase from './SupabaseClient';
 import { useParams } from 'react-router-dom';
 import parse from 'html-react-parser';
@@ -74,6 +74,12 @@ const Detail = () => {
     window.scrollTo(0, 0)
   }, [])
 
+  const getReadingTime = (text) => {
+    const wordsPerMinute = 200; // Average reading speed
+    const words = text.split(/\s+/).length; // Split by spaces and count words
+    return Math.ceil(words / wordsPerMinute); // Calculate minutes
+  };
+
   if (isLoading) {
     return <div className='grid h-screen place-items-center text-muted-foreground font-light text-sm'>Loading...</div>; // Display a loading indicator while fetching data
   }
@@ -91,9 +97,13 @@ const Detail = () => {
         <Link onClick={() => navigate(-1)} className='text-lg font-semibold px-3 py-1 border-[2px] border-black rounded-2xl flex items-center gap-x-2'>
           <ArrowLeft /> Back
         </Link>
-         <h1 className='text-xs font-light text-muted-foreground '>{formatCreatedAt(blog.created_at)}</h1>
+         <div className='flex items-center'>
+          <h1 className='text-xs font-light text-muted-foreground '>{formatCreatedAt(blog.created_at)}</h1>
+          <Dot className='text-stone-500' />
+          <p className='text-xs font-light text-muted-foreground'>{getReadingTime(blog.note_text)} min read</p>
+         </div>
       </div>
-      <div className='mx-auto max-w-lg mb-12 gap-y-4 flex flex-col'>
+      <div className='mx-auto max-w-lg mb-12 gap-y-4 flex flex-col blog-detail'>
         <h1 className='font-semibold text-4xl'>{blog.title}</h1>
         <p className='text-sm'><HtmlRenderer html={blog.note_text} /></p>
       </div>

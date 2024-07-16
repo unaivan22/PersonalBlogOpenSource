@@ -150,3 +150,41 @@ blockquote p {
 blockquote span {
   background: #f9f9f9;
 }
+
+.blog-detail p a{
+  text-decoration: underline;
+  color: black;
+}
+
+.blog-detail h1{
+  font-size: 2em;
+  font-weight: 800;
+  color: black;
+  margin: 0 0 .5rem 0;
+}
+
+.blog-detail h2{
+  font-size: 1.5em;
+  font-weight: 800;
+  color: black;
+  margin: 0 0 .5rem 0;
+}
+
+.blog-detail ol{
+  padding: revert !important;
+}
+
+.blog-detail ol li{
+  list-style: auto;
+  list-style-position: outside;
+  padding: revert !important;
+}
+
+.blog-detail ul{
+  padding: revert !important;
+}
+
+.blog-detail ul li{
+  list-style: disc;
+  list-style-position: outside;
+}

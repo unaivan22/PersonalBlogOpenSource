@@ -1,22 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap'); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 *{
-  font-family: "Lora", serif !important;
+  /* font-family: "Lora", serif !important; */
+  font-family: "Inter", sans-serif !important;
 }
 
-.inter-typeface{
+/* .inter-typeface{
   font-family: "Inter", sans-serif !important;
 }
 
 .pixel-typeface{
   font-family: "Pixelify Sans", sans-serif !important;
-}
+} */
 
 @layer base {
   :root {
@@ -127,6 +128,11 @@
 .blogslists img{
   display: none !important;
   height: 0px !important;
+}
+
+.blogslists img.show{
+  display: block !important;
+  height: 200px !important;
 }
 
 blockquote {

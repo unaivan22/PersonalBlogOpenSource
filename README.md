@@ -6,7 +6,7 @@
  4. Copy and paste `supabaseUrl` and `supabaseKey` into `SupabaseClient.jsx`.
  5. Go to the **SQL Editor** and run the following command: `ALTER TABLE blogs ADD COLUMN user_id uuid REFERENCES auth.users ON DELETE CASCADE;`
  5. Go to the **blogs** table and create columns as shown in the image below:
-![enter image description here](https://i.ibb.co.com/6wGkZPL/Screenshot-2024-07-11-at-20-19-26.png)
+![enter image description here](https://i.ibb.co.com/QNvZdKm/Screenshot-2024-07-17-at-08-27-33.png)
  6. To change the router page, edit `RouterPage.jsx`.
  7. Finish
 
